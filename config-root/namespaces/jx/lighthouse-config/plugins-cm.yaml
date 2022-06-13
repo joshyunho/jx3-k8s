@@ -6,6 +6,10 @@ data:
       repos:
       - joshyunho/jx3-k8s
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - joshyunho/argocd-example-apps
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      joshyunho/argocd-example-apps:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       joshyunho/jx3-k8s:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      joshyunho/argocd-example-apps:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       joshyunho/jx3-k8s:
       - config-updater
       - approve
@@ -55,6 +80,11 @@ data:
     - repos:
       - joshyunho/jx3-k8s
       trusted_org: todo
+    - repos:
+      - joshyunho/argocd-example-apps
+      trusted_org: joshyunho
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
