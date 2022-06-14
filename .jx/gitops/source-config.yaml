@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: argocd-example-apps
+    - name: react-test
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
