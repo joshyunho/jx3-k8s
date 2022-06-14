@@ -18,5 +18,5 @@ spec:
   repo: argocd-example-apps
   scheduler:
     kind: ""
-    name: ""
+    name: in-repo
   url: https://github.com/joshyunho/argocd-example-apps

@@ -82,7 +82,7 @@ data:
       trusted_org: todo
     - repos:
       - joshyunho/argocd-example-apps
-      trusted_org: joshyunho
+      trusted_org: todo
     welcome:
     - message_template: Welcome
 kind: ConfigMap
