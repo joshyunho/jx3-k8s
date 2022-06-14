@@ -10,6 +10,7 @@ spec:
     repositories:
     - name: argocd-example-apps
     - name: golang-test
+    - name: python-test
     - name: react-test
     scheduler: in-repo
   slack:
