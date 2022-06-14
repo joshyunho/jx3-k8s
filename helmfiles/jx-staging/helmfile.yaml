@@ -1,0 +1,11 @@
+filepath: ""
+namespace: jx-staging
+repositories:
+- name: dev
+  url: http://bucketrepo-jx.207.192.68.74.nip.io
+releases:
+- chart: dev/python-test
+  version: 0.0.2
+  name: python-test
+templates: {}
+renderedvalues: {}
