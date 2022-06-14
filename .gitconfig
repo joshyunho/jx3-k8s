@@ -1,0 +1,23 @@
+[user]
+	name = joshyunho
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+	autosquash = true
+[oh-my-zsh]
+	hide-status = 1
+	hide-dirty = 1
+	lastVersion = e9e8c6b54d594109041bdd4bc3902b40f9ae8849
+[core]
+	editor = vim
+	eol = lf
+	autocrlf = false
+[url "git@bits.linode.com:"]
+    insteadOf = https://bits.linode.com/
+[fsck]
+	zeroPaddedFilemode = ignore
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+[receive "fsck"]
+	zeroPaddedFilemode = ignore
