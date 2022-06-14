@@ -33,5 +33,8 @@ spec:
     username: joshyunho
   repository: bucketrepo
   secretStorage: local
+  storage:
+    name: linode-s3
+    url: s3://cpc3-josh
   vault: {}
   webhook: lighthouse
