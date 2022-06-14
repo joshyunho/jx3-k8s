@@ -5,18 +5,18 @@ metadata:
   labels:
     owner: joshyunho
     provider: github
-    repository: argocd-example-apps
+    repository: python-test
     gitops.jenkins-x.io/pipeline: 'namespaces'
-  name: joshyunho-argocd-example-apps
+  name: joshyunho-python-test
   namespace: jx
 spec:
-  httpCloneURL: https://github.com/joshyunho/argocd-example-apps.git
+  httpCloneURL: https://github.com/joshyunho/python-test.git
   org: joshyunho
   provider: https://github.com
   providerKind: github
   providerName: github
-  repo: argocd-example-apps
+  repo: python-test
   scheduler:
     kind: ""
     name: in-repo
-  url: https://github.com/joshyunho/argocd-example-apps
+  url: https://github.com/joshyunho/python-test

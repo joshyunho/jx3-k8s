@@ -7,36 +7,13 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        joshyunho/argocd-example-apps: true
+        joshyunho/golang-test: true
         joshyunho/jx3-k8s: true
+        joshyunho/python-test: true
+        joshyunho/react-test: true
     plank: {}
     pod_namespace: jx
-    postsubmits:
-      joshyunho/argocd-example-apps:
-      - agent: tekton-pipeline
-        branches:
-        - master
-        - main
-        labels:
-          aadpodidbinding: tekton-bot
-        name: release
-        pipeline_run_spec:
-          pipelineRef:
-            name: jx-meta-pipeline
-          serviceAccountName: tekton-bot
-    presubmits:
-      joshyunho/argocd-example-apps:
-      - agent: tekton-pipeline
-        always_run: true
-        context: pr-build
-        labels:
-          aadpodidbinding: tekton-bot
-        name: pr-build
-        pipeline_run_spec:
-          pipelineRef:
-            name: jx-meta-pipeline
-          serviceAccountName: tekton-bot
-        rerun_command: /test this
-        trigger: (?m)^/test( all| this),?(\s+|$)
     prowjob_namespace: jx
     push_gateway:
       serve_metrics: true
@@ -47,7 +24,10 @@ data:
         skip-unknown-contexts: false
       merge_method:
         joshyunho/argocd-example-apps: merge
+        joshyunho/golang-test: merge
         joshyunho/jx3-k8s: merge
+        joshyunho/python-test: merge
+        joshyunho/react-test: merge
       queries:
       - labels:
         - approved
@@ -60,6 +40,9 @@ data:
         repos:
         - joshyunho/jx3-k8s
         - joshyunho/argocd-example-apps
+        - joshyunho/golang-test
+        - joshyunho/python-test
+        - joshyunho/react-test
       - labels:
         - updatebot
         missingLabels:
@@ -71,6 +54,9 @@ data:
         repos:
         - joshyunho/jx3-k8s
         - joshyunho/argocd-example-apps
+        - joshyunho/golang-test
+        - joshyunho/python-test
+        - joshyunho/react-test
       target_url: http://lighthouse-jx.207.192.68.74.nip.io/merge/status
 kind: ConfigMap
 metadata:

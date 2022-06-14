@@ -10,6 +10,18 @@ data:
       repos:
       - joshyunho/argocd-example-apps
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - joshyunho/golang-test
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - joshyunho/python-test
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - joshyunho/react-test
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -25,7 +37,22 @@ data:
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
+      joshyunho/golang-test:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       joshyunho/jx3-k8s:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      joshyunho/python-test:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      joshyunho/react-test:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
@@ -36,6 +63,22 @@ data:
     owners: {}
     plugins:
       joshyunho/argocd-example-apps:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      joshyunho/golang-test:
       - approve
       - assign
       - blunderbuss
@@ -68,6 +111,38 @@ data:
       - cat
       - dog
       - pony
+      joshyunho/python-test:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      joshyunho/react-test:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
     requiresig: {}
     sigmention: {}
     size:
@@ -82,7 +157,16 @@ data:
       trusted_org: todo
     - repos:
       - joshyunho/argocd-example-apps
-      trusted_org: joshyunho
+      trusted_org: todo
+    - repos:
+      - joshyunho/golang-test
+      trusted_org: todo
+    - repos:
+      - joshyunho/python-test
+      trusted_org: todo
+    - repos:
+      - joshyunho/react-test
+      trusted_org: todo
     welcome:
     - message_template: Welcome
 kind: ConfigMap
